@@ -1,5 +1,4 @@
-public abstract class Persona {
-    //Atributos
+public abstract class Persona { //Atributos
     private String nombre;
     private String apellido;
     private int legajo;

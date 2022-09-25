@@ -1,4 +1,4 @@
-package TrabajoFacuLab2;
+
 
 import java.util.ArrayList;
 
@@ -19,6 +19,7 @@ public class Carrera
     public void setColecionMaterias(ArrayList<String> colecionMaterias) {
         ColecionMaterias = colecionMaterias;
     }
+
     //Getters
 
     public String getNombre() {
@@ -30,17 +31,18 @@ public class Carrera
     }
     //Metodos
 
-    public  void agregarMatreia()
+    public  void agregarMatreia(String materia)
     {
 
-        ColecionMaterias.add();
+        ColecionMaterias.add(materia);
 
     }
-    public  void eliminarMateria()
+
+    public  void eliminarMateria(String materia)
     {
-
-        ColecionMaterias.remove();
+        ColecionMaterias.remove(materia);
     }
+
     public  void encontrarMateria(String nombre)
     {
 
