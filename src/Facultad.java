@@ -1,64 +1,67 @@
-package TrabajoFacuLab2;
-
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class Facultad
-
-{
-
-
-
+public class Facultad implements Informacion{
     //Atributos
 
- String nombre;
+    String nombre;
+    private  ArrayList<Carrera> colecionCarreras = new ArrayList<Carrera>();
 
- private  ArrayList<String> ColecionCarreras = new ArrayList<String>();
-
-//Costructor
-
+   //Costructor
 
 
- public Facultad(String nombre)
- {
-  this.nombre = nombre;
 
- }
+    public Facultad(String nombre)
+    {
+     this.nombre = nombre;
 
- //Setter
+    }
 
-
- public void setNombre(String nombre) {
-  this.nombre = nombre;
- }
-
- public void setColecionCarreras(ArrayList<String> colecionCarreras) {
-  ColecionCarreras = colecionCarreras;
- }
- //Getter
+    //Setter
 
 
- public String getNombre() {
-  return nombre;
- }
-
- public ArrayList<String> getColecionCarreras() {
-  return ColecionCarreras;
- }
- //Metodos
-
- public static void agregarCarrera(Carrera carrera)
- {
-  ColecionCarreras.add();
- }
- public static void eliminarCarrera(String nombre)
- {
-  ColecionCarreras.remove();
- }
- public static void eliminarEstudiante(Estudiante Estudiante)
- {
-
- }
+    public void setNombre(String nombre) {
+     this.nombre = nombre;
+    }
 
 
+    //Getter
+
+    public String getNombre()
+    {
+     return nombre;
+    }
+
+    public ArrayList<Carrera> getColecionCarreras()
+    {
+     return colecionCarreras;
+    }
+
+   //Metodos
+
+    public  void agregarCarrera(Carrera carrera)
+    {
+     this.colecionCarreras.add(carrera);
+    }
+
+    public  void eliminarCarrera(Carrera carrera)
+    {
+     this.colecionCarreras.remove(carrera);
+    }
+
+    public  void eliminarEstudiante(Estudiante Estudiante)
+    {
+
+    }
+
+    //Interfaces
+
+    @Override
+    public int verCantidad() {
+     return 0;
+    }
+
+    @Override
+    public String listarContenido() {
+     return null;
+    }
 }

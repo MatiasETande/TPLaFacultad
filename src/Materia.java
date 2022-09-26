@@ -1,13 +1,11 @@
-package TrabajoFacuLab2;
-
 import java.util.ArrayList;
 
-public class Materia
-{
+public class Materia implements Informacion{
+
     //Atributos
     String nombre;
-
-    private  ArrayList<String> ColecionEstudiante = new ArrayList<String>();
+    Profesor titular;
+    private  ArrayList<Estudiante> ColecionEstudiante = new ArrayList<Estudiante>();
 
     //Setters
 
@@ -15,36 +13,54 @@ public class Materia
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    public void setColecionEstudiante(ArrayList<String> colecionEstudiante) {
-        ColecionEstudiante = colecionEstudiante;
+    public void setTitular(Profesor profesor)
+    {
+        this.titular = profesor;
     }
+
+
     //Getters
 
+
+    public Profesor getTitular()
+    {
+        return titular;
+    }
 
     public String getNombre() {
         return nombre;
     }
 
-    public ArrayList<String> getColecionEstudiante() {
+    /*public ArrayList<String> getColecionEstudiante() {
         return ColecionEstudiante;
-    }
+    }*/
 
     //Metodos
 
-    public  void agregarEstudiante()
+    public  void agregarEstudiante(Estudiante estudiante)
     {
-        ColecionEstudiante.add();
+        ColecionEstudiante.add(estudiante);
     }
 
     public  void eliminarEstudiante(String nombre)
     {
-        ColecionEstudiante.remove();
+        ColecionEstudiante.remove(nombre);
     }
     public  void modificarTitular()
     {
 
+
     }
 
+    //Interfaces
+    
+    @Override
+    public int verCantidad() {
+        return 0;
+    }
 
+    @Override
+    public String listarContenido() {
+        return null;
+    }
 }

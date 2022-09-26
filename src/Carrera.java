@@ -1,4 +1,4 @@
-package TrabajoFacuLab2;
+
 
 import java.util.ArrayList;
 
@@ -7,7 +7,8 @@ public class Carrera
     //Atributos
     private String nombre;
 
-    private ArrayList<String> ColecionMaterias = new ArrayList<String>();
+    private ArrayList<Materia> ColecionMaterias = new ArrayList<Materia>();
+
 
     //setter
 
@@ -16,35 +17,49 @@ public class Carrera
         this.nombre = nombre;
     }
 
-    public void setColecionMaterias(ArrayList<String> colecionMaterias) {
+    public void setColecionMaterias(ArrayList<Materia> colecionMaterias) {
         ColecionMaterias = colecionMaterias;
     }
+
     //Getters
 
     public String getNombre() {
         return nombre;
     }
 
-    public ArrayList<String> getColecionMaterias() {
+    public ArrayList<Materia> getColecionMaterias() {
         return ColecionMaterias;
     }
     //Metodos
 
-    public  void agregarMatreia()
+    public  void agregarMatreia(Materia materia)
     {
 
-        ColecionMaterias.add();
+        ColecionMaterias.add(materia);
 
     }
-    public  void eliminarMateria()
+
+    public  void eliminarMateria(Materia materia)
     {
-
-        ColecionMaterias.remove();
+        ColecionMaterias.remove(materia);
     }
+
     public  void encontrarMateria(String nombre)
     {
 
 
     }
+
+    @Override
+    public String toString()
+    {
+        return "Carrera{" +
+                "nombre='" + nombre + '\'' +
+                ", ColecionMaterias=" + ColecionMaterias +
+                '}';
+    }
+
+
+
 
 }
