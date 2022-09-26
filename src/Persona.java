@@ -1,10 +1,12 @@
-public abstract class Persona { //Atributos
+public abstract class Persona {
+    //Atributos
     private String nombre;
     private String apellido;
     private int legajo;
 
     //Constructor
-    protected Persona(String nombre, String apellido, int legajo) {
+    protected Persona(String nombre, String apellido, int legajo)
+    {
         this.nombre = nombre;
         this.apellido = apellido;
         this.legajo = legajo;

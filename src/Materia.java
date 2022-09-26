@@ -4,7 +4,7 @@ public class Materia implements Informacion{
 
     //Atributos
     String nombre;
-
+    Profesor titular;
     private  ArrayList<Estudiante> ColecionEstudiante = new ArrayList<Estudiante>();
 
     //Setters
@@ -13,12 +13,19 @@ public class Materia implements Informacion{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    public void setTitular(Profesor profesor)
+    {
+        this.titular = profesor;
+    }
 
-    /*public void setColecionEstudiante(ArrayList<String> colecionEstudiante) {
-        ColecionEstudiante = colecionEstudiante;
-    }*/
+
     //Getters
 
+
+    public Profesor getTitular()
+    {
+        return titular;
+    }
 
     public String getNombre() {
         return nombre;
@@ -41,6 +48,7 @@ public class Materia implements Informacion{
     }
     public  void modificarTitular()
     {
+
 
     }
 

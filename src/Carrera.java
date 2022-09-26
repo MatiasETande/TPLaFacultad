@@ -7,7 +7,8 @@ public class Carrera
     //Atributos
     private String nombre;
 
-    private ArrayList<String> ColecionMaterias = new ArrayList<String>();
+    private ArrayList<Materia> ColecionMaterias = new ArrayList<Materia>();
+
 
     //setter
 
@@ -16,7 +17,7 @@ public class Carrera
         this.nombre = nombre;
     }
 
-    public void setColecionMaterias(ArrayList<String> colecionMaterias) {
+    public void setColecionMaterias(ArrayList<Materia> colecionMaterias) {
         ColecionMaterias = colecionMaterias;
     }
 
@@ -26,19 +27,19 @@ public class Carrera
         return nombre;
     }
 
-    public ArrayList<String> getColecionMaterias() {
+    public ArrayList<Materia> getColecionMaterias() {
         return ColecionMaterias;
     }
     //Metodos
 
-    public  void agregarMatreia(String materia)
+    public  void agregarMatreia(Materia materia)
     {
 
         ColecionMaterias.add(materia);
 
     }
 
-    public  void eliminarMateria(String materia)
+    public  void eliminarMateria(Materia materia)
     {
         ColecionMaterias.remove(materia);
     }
@@ -48,5 +49,17 @@ public class Carrera
 
 
     }
+
+    @Override
+    public String toString()
+    {
+        return "Carrera{" +
+                "nombre='" + nombre + '\'' +
+                ", ColecionMaterias=" + ColecionMaterias +
+                '}';
+    }
+
+
+
 
 }

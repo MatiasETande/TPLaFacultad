@@ -23,19 +23,18 @@ public class Facultad implements Informacion{
      this.nombre = nombre;
     }
 
-    /*public void setColecionCarreras(ArrayList<String> colecionCarreras) {
-     ColecionCarreras = colecionCarreras;
-    }*/
 
     //Getter
 
-    public String getNombre() {
+    public String getNombre()
+    {
      return nombre;
     }
 
-   /* public ArrayList<String> getColecionCarreras() {
-     return ColecionCarreras;
-    }*/
+    public ArrayList<Carrera> getColecionCarreras()
+    {
+     return colecionCarreras;
+    }
 
    //Metodos
 
