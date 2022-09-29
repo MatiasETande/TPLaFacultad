@@ -6,7 +6,7 @@ public class Estudiante extends Persona{
 
     //Constructor
 
-    protected Estudiante(String nombre, String apellido, int legajo) {
+    public Estudiante(String nombre, String apellido, int legajo) {
         super(nombre, apellido, legajo);
     }
 
@@ -15,6 +15,8 @@ public class Estudiante extends Persona{
     //Getter
 
     //Metodos
+
+
 
 
     @Override
