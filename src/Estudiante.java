@@ -1,7 +1,8 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Estudiante extends Persona{
-
+    Scanner leer = new Scanner(System.in);
     //Atributos
 
     //Constructor
@@ -16,9 +17,6 @@ public class Estudiante extends Persona{
 
     //Metodos
 
-
-
-
     @Override
     public String toString() {
         return "Estudiante: {\n"+super.toString()+"}";
@@ -26,29 +24,49 @@ public class Estudiante extends Persona{
 
     @Override
     public void modificarDatos() {
-        int opcion = -1;
+        System.out.println("\t Menu de Modificación de Datos");
+        System.out.println("\t\t\tde Un Estudiante");
+        System.out.println("\t------------------------------");
+        int opcion;
 
-        while (opcion != 0){
+        do {
+            System.out.println("\t¿Que datos desea Modificar?");
+            System.out.println  ("\t\t--> 1: Nombre" +
+                    "\n\t\t--> 2: Apellido" +
+                    "\n\t\t--> 3: Legajo" +
+                    "\n\t\t--> 0: Salir" +
+                    "\n\tIngrese su opcion: ");
 
-            System.out.println("¿Que datos desea Modificar?");
-            System.out.println  ("1: Nombre" +
-                               "\n2: Apellido" +
-                               "\n3: Legajo" +
-                               "\n0: Salir" +
-                               "\nIngrese su opcion: ");
+            try {
+                opcion =leer.nextInt();
 
-            Scanner leer = new Scanner(System.in);
-            opcion =leer.nextInt();
+                switch (opcion){
+                    case 1: {
+                        System.out.println("\t-->modificando nombre");
+                        this.setNombre(leer.next());
+                        break;
+                    }
+                    case 2: {
+                        System.out.println("\t-->modificando Apellido");
+                        this.setApellido(leer.next());
+                        break;
+                    }
+                    case 3: {
+                        System.out.println("\t-->modificando legajo");
+                        this.setLegajo(leer.nextInt());
+                        break;
+                    }
+                    case 0: System.out.println("\t-->Saliendo de modificaciones");break;
+                    default:System.out.println("\t¡¡¡Por favor ingrese una opcion valida!!!");break;
+                }
 
-            switch (opcion){
-                case 1: System.out.println("modificando nombre");break;
-                case 2: System.out.println("modificando Apellido");break;
-                case 3: System.out.println("modificando legajo");break;
-                case 0: System.out.println("Saliendo de modificaciones");break;
-                default:System.out.println("Error: porfavor ingrese una opcion valida");break;
+            }catch (InputMismatchException e){
+                System.out.println("\t¡¡¡Error: por favor solo ingrese numeros!!!");
+                leer.next();//Lee la siguiente linea para evitar un bucle con la exepcion
+                opcion = -1;//Por si quedo alguna otra opcion anteriormente seleccionada
             }
-        }
 
+        }while (opcion != 0);
 
     }
 }

@@ -2,12 +2,12 @@
 
 import java.util.ArrayList;
 
-public class Carrera
+public class Carrera implements Informacion
 {
     //Atributos
     private String nombre;
 
-    private ArrayList<Materia> ColecionMaterias = new ArrayList<Materia>();
+    private ArrayList<Materia> colecionMaterias = new ArrayList<Materia>();
 
 
     //setter
@@ -18,7 +18,7 @@ public class Carrera
     }
 
     public void setColecionMaterias(ArrayList<Materia> colecionMaterias) {
-        ColecionMaterias = colecionMaterias;
+        colecionMaterias = colecionMaterias;
     }
 
     //Getters
@@ -28,20 +28,20 @@ public class Carrera
     }
 
     public ArrayList<Materia> getColecionMaterias() {
-        return ColecionMaterias;
+        return colecionMaterias;
     }
     //Metodos
 
     public  void agregarMatreia(Materia materia)
     {
 
-        ColecionMaterias.add(materia);
+        colecionMaterias.add(materia);
 
     }
 
     public  void eliminarMateria(Materia materia)
     {
-        ColecionMaterias.remove(materia);
+        colecionMaterias.remove(materia);
     }
 
     public  void encontrarMateria(String nombre)
@@ -55,11 +55,17 @@ public class Carrera
     {
         return "Carrera{" +
                 "nombre='" + nombre + '\'' +
-                ", ColecionMaterias=" + ColecionMaterias +
+                ", ColecionMaterias=" + colecionMaterias +
                 '}';
     }
 
+    @Override
+    public int verCantidad() {
+        return 0;
+    }
 
-
-
+    @Override
+    public String listarContenido() {
+        return null;
+    }
 }

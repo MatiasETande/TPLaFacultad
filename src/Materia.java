@@ -1,18 +1,28 @@
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Scanner;
+import java.util.List;
 
 public class Materia implements Informacion{
-
+    Scanner leer = new Scanner(System.in);
     //Atributos
-    String nombre;
-    Profesor titular;
-    private  ArrayList<Estudiante> ColecionEstudiante = new ArrayList<Estudiante>();
+    private String nombre;
+    private Profesor titular;
+    private List<Estudiante> colecionEstudiante = new LinkedList<Estudiante>();
+
+    //Constructor
+
+    public Materia(String nombre, Profesor titular) {
+        this.nombre = nombre;
+        this.titular = titular;
+    }
+
 
     //Setters
-
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     public void setTitular(Profesor profesor)
     {
         this.titular = profesor;
@@ -20,7 +30,6 @@ public class Materia implements Informacion{
 
 
     //Getters
-
 
     public Profesor getTitular()
     {
@@ -31,25 +40,46 @@ public class Materia implements Informacion{
         return nombre;
     }
 
-    /*public ArrayList<String> getColecionEstudiante() {
-        return ColecionEstudiante;
-    }*/
+    public List<Estudiante> getColecionEstudiante() {
+        return colecionEstudiante;
+    }
 
     //Metodos
 
     public  void agregarEstudiante(Estudiante estudiante)
     {
-        ColecionEstudiante.add(estudiante);
+
+        colecionEstudiante.add(estudiante);
     }
 
     public  void eliminarEstudiante(String nombre)
     {
-        ColecionEstudiante.remove(nombre);
+
+        for (Estudiante estudiante: colecionEstudiante)
+        {
+            if (estudiante.getNombre().toLowerCase().contains(nombre.toLowerCase()))
+            {
+                colecionEstudiante.remove(estudiante);break;
+            }
+        }
+
     }
-    public  void modificarTitular()
+    public  void modificarTitular(Profesor profesor)
     {
+        this.titular= profesor;
+    }
 
+    public boolean buscarEstudiante(String nombre){
 
+        for (Estudiante estudiante: this.colecionEstudiante)
+        {
+            if (estudiante.getNombre().toLowerCase().contains(nombre.toLowerCase()))
+            {
+                System.out.println(estudiante.toString());
+            }
+        }
+
+        return true;
     }
 
     //Interfaces
@@ -61,6 +91,14 @@ public class Materia implements Informacion{
 
     @Override
     public String listarContenido() {
-        return null;
+        String listaEstudiantes = "Legajo\tNombre y Apellido\n";
+        for (Estudiante estudiante: colecionEstudiante)
+        {
+            listaEstudiantes= listaEstudiantes+estudiante.getLegajo()+
+                              "\t"+estudiante.getApellido()+
+                              ", "+estudiante.getNombre()+"\n";
+        }
+
+        return listaEstudiantes;
     }
 }
