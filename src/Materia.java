@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.List;
 
 public class Materia implements Informacion{
-    Scanner leer = new Scanner(System.in);
+    private Scanner leer = new Scanner(System.in);
     //Atributos
     private String nombre;
     private Profesor titular;
@@ -64,6 +64,7 @@ public class Materia implements Informacion{
         }
 
     }
+
     public  void modificarTitular(Profesor profesor)
     {
         this.titular= profesor;
@@ -75,7 +76,9 @@ public class Materia implements Informacion{
         {
             if (estudiante.getNombre().toLowerCase().contains(nombre.toLowerCase()))
             {
-                System.out.println(estudiante.toString());
+                System.out.println(estudiante.getLegajo()+
+                        "\t"+estudiante.getApellido()+
+                        ", "+estudiante.getNombre()+"\n");
             }
         }
 
@@ -86,12 +89,12 @@ public class Materia implements Informacion{
     
     @Override
     public int verCantidad() {
-        return 0;
+        return this.colecionEstudiante.size();
     }
 
     @Override
     public String listarContenido() {
-        String listaEstudiantes = "Legajo\tNombre y Apellido\n";
+        String listaEstudiantes = "Legajo\t Apellido y Nombre\n";
         for (Estudiante estudiante: colecionEstudiante)
         {
             listaEstudiantes= listaEstudiantes+estudiante.getLegajo()+

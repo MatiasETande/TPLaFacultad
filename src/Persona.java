@@ -5,7 +5,7 @@ public abstract class Persona {
     private int legajo;
 
     //Constructor
-    protected Persona(String nombre, String apellido, int legajo)
+    Persona(String nombre, String apellido, int legajo)
     {
         this.nombre = nombre;
         this.apellido = apellido;

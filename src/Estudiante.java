@@ -1,8 +1,8 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Estudiante extends Persona{
-    Scanner leer = new Scanner(System.in);
+public class Estudiante extends Persona {
+    private Scanner leer = new Scanner(System.in);
     //Atributos
 
     //Constructor
@@ -69,4 +69,6 @@ public class Estudiante extends Persona{
         }while (opcion != 0);
 
     }
+
+
 }

@@ -31,7 +31,12 @@ public class LaFacultadTP {
 
         System.out.println(m1.listarContenido());
 
-        m1.buscarEstudiante("Matias");
+        //m1.buscarEstudiante("Matias");
+
+        Carrera c1 = new Carrera();
+        c1.agregarMatreia(m1);
+
+        c1.encontrarMateria("estad");
 
 
 
