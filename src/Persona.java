@@ -12,6 +12,9 @@ public abstract class Persona {
         this.legajo = legajo;
     }
 
+    protected Persona() {
+    }
+
     //Setter
 
     public void setNombre(String nombre) {
