@@ -1,13 +1,19 @@
-
-
 import java.util.ArrayList;
-
-public class Carrera
+import java.util.LinkedList;
+import java.util.List;
+public class Carrera extends Estudiante implements Informacion
 {
+    //costructor
+
+
+    public Carrera(String nombre) {
+        this.nombre = nombre;
+    }
+
     //Atributos
     private String nombre;
 
-    private ArrayList<Materia> ColecionMaterias = new ArrayList<Materia>();
+    private List<Materia> colecionMaterias = new LinkedList<Materia>();
 
 
     //setter
@@ -18,7 +24,7 @@ public class Carrera
     }
 
     public void setColecionMaterias(ArrayList<Materia> colecionMaterias) {
-        ColecionMaterias = colecionMaterias;
+        colecionMaterias = colecionMaterias;
     }
 
     //Getters
@@ -27,39 +33,62 @@ public class Carrera
         return nombre;
     }
 
-    public ArrayList<Materia> getColecionMaterias() {
-        return ColecionMaterias;
+    public List<Materia> getColecionMaterias() {
+        return colecionMaterias;
     }
     //Metodos
 
     public  void agregarMatreia(Materia materia)
     {
 
-        ColecionMaterias.add(materia);
+        colecionMaterias.add(materia);
 
     }
 
-    public  void eliminarMateria(Materia materia)
+    public  void eliminarMateria()
     {
-        ColecionMaterias.remove(materia);
+        for (Materia materia : colecionMaterias)
+        {
+            if (materia.getNombre().toLowerCase().contains(nombre.toLowerCase()))
+            {
+                colecionMaterias.remove(materia);break;
+            }
+        }
     }
 
-    public  void encontrarMateria(String nombre)
+    /* Busca en la coleccion una materia por su nombre y retorna el objeto Materia.
+      Para esto debe recorrer la coleccion de materias, comparando el nombre de cada una con el nombre buscado.
+     */
+    public Materia encontrarMateria(String nombre)
     {
-
-
+        for (Materia materia : this.colecionMaterias)
+        {
+            if (materia.getNombre().equals(nombre))
+            {
+                System.out.println(materia.toString());
+                return materia;
+            }
+        }
+        return null;
     }
+
 
     @Override
     public String toString()
     {
         return "Carrera{" +
                 "nombre='" + nombre + '\'' +
-                ", ColecionMaterias=" + ColecionMaterias +
+                ", ColecionMaterias=" + colecionMaterias +
                 '}';
     }
 
+    @Override
+    public int verCantidad() {
+        return 0;
+    }
 
-
-
+    @Override
+    public String listarContenido() {
+        return null;
+    }
 }
