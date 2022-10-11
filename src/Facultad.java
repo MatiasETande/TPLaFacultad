@@ -45,11 +45,11 @@ public class Facultad implements Informacion{
 
     public  void eliminarCarrera(Carrera carrera)
     {
-        for (Estudiante estudiante : colecionCarreras)
+        for (Carrera unaCarrera : this.colecionCarreras)
         {
-            if (estudiante.getNombre().toLowerCase().contains(nombre.toLowerCase()))
+            if (unaCarrera.getNombre().toLowerCase().contains(nombre.toLowerCase()))
             {
-                colecionCarreras.remove(estudiante);
+                colecionCarreras.remove(unaCarrera);
                 break;
             }
         }

@@ -12,13 +12,15 @@ public class Carrera implements Informacion
     private ArrayList<Materia> colecionMaterias = new ArrayList<Materia>();
 
     //Constructor
-    public Carrera(String nombre) {
+    public Carrera(String nombre)
+    {
         this.nombre = nombre;
     }
 
     //setter
 
-    public void setNombre(String nombre) {
+    public void setNombre(String nombre)
+    {
         this.nombre = nombre;
     }
 
@@ -29,7 +31,8 @@ public class Carrera implements Informacion
 
     //Getters
 
-    public String getNombre() {
+    public String getNombre()
+    {
         return nombre;
     }
 
@@ -62,10 +65,9 @@ public class Carrera implements Informacion
 
     /* Busca en la coleccion una materia por su nombre y retorna el objeto Materia.
       Para esto debe recorrer la coleccion de materias, comparando el nombre de cada una con el nombre buscado.
-     */
-    public Materia encontrarMateria(String nombre)
+     ¡¡¡¡¡¡¡¡¡¡¡Explicarle a bruno esto!!!!!! */
+    public void encontrarMateria(String nombre)
     {
-    
 
         int opcion = -1;
 
@@ -89,7 +91,10 @@ public class Carrera implements Informacion
                     }
 
                     switch (opcion){
-                        case 1:System.out.println("Se elimina");break;
+                        case 1: {
+                            System.out.println("Se elimina");
+                            break;
+                        }
                         case 2:System.out.println("NO se elimina");break;
                         default:System.out.println("Ingrese una opcion valida");break;
                     }
