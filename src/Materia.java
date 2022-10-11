@@ -3,11 +3,14 @@ import java.util.Scanner;
 import java.util.List;
 
 public class Materia implements Informacion{
-    Scanner leer = new Scanner(System.in);
+
+    private Scanner leer = new Scanner(System.in);
+
     //Atributos
     private String nombre;
     private Profesor titular;
     private List<Estudiante> colecionEstudiante = new LinkedList<Estudiante>();
+
 
     //Constructor
 
@@ -16,6 +19,8 @@ public class Materia implements Informacion{
         this.titular = titular;
     }
 
+
+    //Setters
 
     //Setters
 
@@ -61,13 +66,32 @@ public class Materia implements Informacion{
             {
                 colecionEstudiante.remove(estudiante);break;
             }
+
+
         }
 
     }
+
+
     public  void modificarTitular(Profesor profesor)
     {
         this.titular= profesor;
     }
+
+
+    /*public boolean buscarEstudiante(String nombre){
+
+        for (Estudiante estudiante: this.colecionEstudiante)
+        {
+            if (estudiante.getNombre().toLowerCase().contains(nombre.toLowerCase()))
+            {
+                System.out.println(estudiante.getLegajo()+
+                        "\t"+estudiante.getApellido()+
+                        ", "+estudiante.getNombre()+"\n");
+            }
+        }*/
+
+
 
     public boolean buscarEstudiante(String nombre){
 
@@ -79,6 +103,7 @@ public class Materia implements Informacion{
             }
         }
 
+
         return true;
     }
 
@@ -86,17 +111,19 @@ public class Materia implements Informacion{
 
     @Override
     public int verCantidad() {
-        return 0;
+        return this.colecionEstudiante.size();
     }
 
     @Override
     public String listarContenido() {
-        String listaEstudiantes = "Legajo\tNombre y Apellido\n";
+
+        String listaEstudiantes = "Legajo\t Apellido y Nombre\n";
         for (Estudiante estudiante: colecionEstudiante)
         {
             listaEstudiantes= listaEstudiantes+estudiante.getLegajo()+
-                    "\t"+estudiante.getApellido()+
-                    ", "+estudiante.getNombre()+"\n";
+                              "\t"+estudiante.getApellido()+
+                              ", "+estudiante.getNombre()+"\n";
+
         }
 
         return listaEstudiantes;

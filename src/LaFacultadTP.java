@@ -1,79 +1,78 @@
 
 /*
- *
- *   Trabajo Practico realizado para la materia Lab de computación II
- *   de la carrera TUP UTN FRRe
- *
- *   By Mazza Bruno & Tande Matias
- *
- * */
+*
+*   Trabajo Practico realizado para la materia Lab de computación II
+*   de la carrera TUP UTN FRRe
+*
+*   By Mazza Bruno & Tande Matias
+*
+* */
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
+
+
 
 public class LaFacultadTP {
 
 
     public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        //Creo la Facultad
+
+        Facultad facultad = new Facultad("UTN FRRe");
+
+        int opcion = -1;
+
+        do {
+            System.out.println("************************ Menu ************************");
+            System.out.println("--> Agregar carrera");
+            System.out.println("--> Eliminar carrera");
+            System.out.println("--> Eliminar Estudiante");
+            System.out.println("Ingrese su Opcion: ");
 
 
+            try {
+                opcion =leer.nextInt();
 
-        Profesor p1 = new Profesor("Nico","Perez",22811,200.0f,5);
-        Profesor p2 = new Profesor("Bruno","Mazza",59897,100.0f,1);
-        Profesor p3 = new Profesor("Nico","Perez",93142,300.0f,10);
-        Estudiante e1 = new Estudiante("Matias Emanuel","Tande",22844);
-        Estudiante e2 = new Estudiante("lucas","Fantin",22844);
-        Estudiante e3 = new Estudiante("Jesus de algo","Lopez",22844);
-        Estudiante e4 = new Estudiante("Cristian","Tevez",22844);
-        Estudiante e5 = new Estudiante("Javier Matias","Martinez",22844);
+                switch (opcion){
+                    case 1: {
+                        System.out.println("--> Agregar carrera");
 
-        Carrera car1 = new Carrera("programacion");
-        Materia m1 = new Materia("Estadistica", p1);
-        Materia m2 = new Materia("dgfgfddgf", p2);
-        Materia m3 = new Materia("laboratorio", p2);
+                        break;
+                    }
+                    case 2: {
+                        System.out.println("--> Eliminar carrera");
 
-        Carrera car2 = new Carrera("licenciatura en sistema");
-        Materia m4 = new Materia("matematica", p3);
-        Materia m5 = new Materia("Sistema de datos", p1);
-        Materia m6 = new Materia("ingles", p3);
+                        break;
+                    }
+                    case 3: {
+                        System.out.println("-->Eliminar Estudiante");
 
+                        break;
+                    }
+                    case 0: {
+                        System.out.println("*************** Finalizando Programa *****************");
+                        break;
+                    }
+                    default:System.out.println("¡¡¡Por favor ingrese una opcion valida!!!");break;
+                }
 
-        m1.agregarEstudiante(e1);
-        m1.agregarEstudiante(e2);
-        m1.agregarEstudiante(e3);
-        m1.agregarEstudiante(e4);
-        m1.agregarEstudiante(e5);
-        m2.agregarEstudiante(e2);
-        m2.agregarEstudiante(e4);
-        m3.agregarEstudiante(e5);
-
-
-        System.out.println(m1.listarContenido());
-
-        m1.buscarEstudiante("mati");
-
-        System.out.println( car1.encontrarMateria("programacion"));
+            }catch (InputMismatchException e){
+                System.out.println("¡¡¡Error: por favor solo ingrese numeros!!!");
+                leer.next();//Lee la siguiente linea para evitar un bucle con la exepcion
+                opcion = -1;//Por si quedo alguna otra opcion anteriormente seleccionada
+            }
 
 
-
-
-
-
-
-        /*String unString = "Matias Emanuel";
-        System.out.println(unString.compareToIgnoreCase("Emanuel"));
-        System.out.println(unString.equalsIgnoreCase("Emanuel"));
-        System.out.println(unString.contains("Emanuel"));
-        System.out.println(unString.toLowerCase().contains("Matias".toLowerCase()));*/
-
-
+        }while (opcion != 0);
 
 
     }
 
+
     Scanner leer = new Scanner(System.in);
-
     public Estudiante crearEstudiante(){
-
 
         Estudiante estudiante = new Estudiante("", "", 0);
 
@@ -104,7 +103,7 @@ public class LaFacultadTP {
         profesor.setLegajo(leer.nextInt());
 
         System.out.println ("Ingrese Sueldo Basico del Profesor" +
-                "\nPara valores decimales use ','(coma)");
+                            "\nPara valores decimales use ','(coma)");
         profesor.setBasico(leer.nextDouble());
 
         System.out.println("Ingrese Antiguedad del Profesor");
@@ -114,24 +113,6 @@ public class LaFacultadTP {
         return profesor;
 
     }
-
-    //facultad
-
-    //carrera
-//crear materia
-    public Materia agregarmateria(){
-
-        Materia materia = new Materia("", crearProfesor());
-
-        System.out.println("la materia que desa agregar a la carrera");
-        materia.setNombre(leer.next());
-
-
-
-        return materia;
-
-    }
-
 
 
 

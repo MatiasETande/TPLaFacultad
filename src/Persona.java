@@ -1,3 +1,4 @@
+
 public abstract class Persona {
     //Atributos
     private String nombre;
@@ -5,14 +6,11 @@ public abstract class Persona {
     private int legajo;
 
     //Constructor
-    protected Persona(String nombre, String apellido, int legajo)
+    Persona(String nombre, String apellido, int legajo)
     {
         this.nombre = nombre;
         this.apellido = apellido;
         this.legajo = legajo;
-    }
-
-    protected Persona() {
     }
 
     //Setter
@@ -46,7 +44,6 @@ public abstract class Persona {
 
 
     //Metodos
-
 
     @Override
     public String toString() {
