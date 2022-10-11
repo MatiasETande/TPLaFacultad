@@ -6,13 +6,13 @@ public class Facultad implements Informacion{
     String nombre;
     private  ArrayList<Carrera> colecionCarreras = new ArrayList<Carrera>();
 
-   //Costructor
+    //Costructor
 
 
 
     public Facultad(String nombre)
     {
-     this.nombre = nombre;
+        this.nombre = nombre;
 
     }
 
@@ -20,7 +20,7 @@ public class Facultad implements Informacion{
 
 
     public void setNombre(String nombre) {
-     this.nombre = nombre;
+        this.nombre = nombre;
     }
 
 
@@ -28,40 +28,45 @@ public class Facultad implements Informacion{
 
     public String getNombre()
     {
-     return nombre;
+        return nombre;
     }
 
     public ArrayList<Carrera> getColecionCarreras()
     {
-     return colecionCarreras;
+        return colecionCarreras;
     }
 
-   //Metodos
+    //Metodos
 
     public  void agregarCarrera(Carrera carrera)
     {
-     this.colecionCarreras.add(carrera);
+        this.colecionCarreras.add(carrera);
     }
 
     public  void eliminarCarrera(Carrera carrera)
     {
-     this.colecionCarreras.remove(carrera);
+        for (Carrera unaCarrera : this.colecionCarreras)
+        {
+            if (unaCarrera.getNombre().toLowerCase().contains(nombre.toLowerCase()))
+            {
+                colecionCarreras.remove(unaCarrera);
+                break;
+            }
+        }
+
     }
 
-    public  void eliminarEstudiante(Estudiante Estudiante)
-    {
 
-    }
 
     //Interfaces
 
     @Override
     public int verCantidad() {
-     return 0;
+        return 0;
     }
 
     @Override
     public String listarContenido() {
-     return null;
+        return null;
     }
 }

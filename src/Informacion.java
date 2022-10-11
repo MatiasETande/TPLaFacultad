@@ -5,4 +5,5 @@ public interface Informacion {
     String listarContenido();
 
 
+
 }

@@ -1,5 +1,4 @@
 
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -7,16 +6,24 @@ import java.util.Scanner;
 public class Carrera implements Informacion
 {
     private Scanner leer = new Scanner(System.in);
+    
     //Atributos
     private String nombre;
     private ArrayList<Materia> colecionMaterias = new ArrayList<Materia>();
 
-    //setter
-
-
-    public void setNombre(String nombre) {
+    //Constructor
+    public Carrera(String nombre)
+    {
         this.nombre = nombre;
     }
+
+    //setter
+
+    public void setNombre(String nombre)
+    {
+        this.nombre = nombre;
+    }
+
 
     /*public void setColecionMaterias(ArrayList<Materia> colecionMaterias) {
         this.colecionMaterias = colecionMaterias;
@@ -24,11 +31,13 @@ public class Carrera implements Informacion
 
     //Getters
 
-    public String getNombre() {
+    public String getNombre()
+    {
         return nombre;
     }
 
     public ArrayList<Materia> getColecionMaterias() {
+
         return colecionMaterias;
     }
     //Metodos
@@ -40,13 +49,26 @@ public class Carrera implements Informacion
 
     }
 
-    public  void eliminarMateria(Materia materia)
+    public  void eliminarMateria()
     {
-        colecionMaterias.remove(materia);
+
+
+        for (Materia materia : colecionMaterias)
+        {
+            if (materia.getNombre().toLowerCase().contains(nombre.toLowerCase()))
+            {
+                colecionMaterias.remove(materia);break;
+            }
+        }
+
     }
 
-    public  void encontrarMateria(String nombre)
+    /* Busca en la coleccion una materia por su nombre y retorna el objeto Materia.
+      Para esto debe recorrer la coleccion de materias, comparando el nombre de cada una con el nombre buscado.
+     ¡¡¡¡¡¡¡¡¡¡¡Explicarle a bruno esto!!!!!! */
+    public void encontrarMateria(String nombre)
     {
+
         int opcion = -1;
 
         for (Materia materia:this.colecionMaterias)
@@ -86,7 +108,9 @@ public class Carrera implements Informacion
             System.out.println("No se encontraron resultados");
         }
 
+
     }
+
 
     @Override
     public String toString()
@@ -99,11 +123,14 @@ public class Carrera implements Informacion
 
     @Override
     public int verCantidad() {
+
         return this.colecionMaterias.size();
+
     }
 
     @Override
     public String listarContenido() {
+
         String listaMaterias = "Materias de la carrera "+this.nombre+":\n";
         for (Materia materia: colecionMaterias)
         {
@@ -113,3 +140,4 @@ public class Carrera implements Informacion
         return listaMaterias;
     }
 }
+
