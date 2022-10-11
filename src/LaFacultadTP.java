@@ -29,7 +29,7 @@ public class LaFacultadTP {
             System.out.println("--> Eliminar carrera");
             System.out.println("--> Eliminar Estudiante");
             System.out.println("Ingrese su Opcion: ");
-            //System.out.println("************ ---- ************");
+
 
             try {
                 opcion =leer.nextInt();
@@ -65,65 +65,6 @@ public class LaFacultadTP {
 
 
         }while (opcion != 0);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*Profesor p1 = new Profesor("Nico","Perez",22811,200.0f,5);
-        Estudiante e1 = new Estudiante("Matias Emanuel","Tande",22844);
-        Estudiante e2 = new Estudiante("lucas","Fantin",22844);
-        Estudiante e3 = new Estudiante("Jesus de algo","Lopez",22844);
-        Estudiante e4 = new Estudiante("Cristian","Tevez",22844);
-        Estudiante e5 = new Estudiante("Javier Matias","Martinez",22844);
-
-        Materia m1 = new Materia("Estadistica", p1);
-
-        m1.agregarEstudiante(e1);
-        m1.agregarEstudiante(e2);
-        m1.agregarEstudiante(e3);
-        m1.agregarEstudiante(e4);
-        m1.agregarEstudiante(e5);
-
-        System.out.println(m1.listarContenido());
-
-        //m1.buscarEstudiante("Matias");
-
-        Carrera c1 = new Carrera();
-        c1.agregarMatreia(m1);
-
-        c1.encontrarMateria("esta");*/
-
-
-
-
-        /*String unString = "Matias Emanuel";
-
-        System.out.println(unString.compareToIgnoreCase("Emanuel"));
-
-        System.out.println(unString.equalsIgnoreCase("Emanuel"));
-
-        System.out.println(unString.contains("Emanuel"));
-
-        System.out.println(unString.toLowerCase().contains("Matias".toLowerCase()));*/
-
-
-
-
-
-
 
 
     }
