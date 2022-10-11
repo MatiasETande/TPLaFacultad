@@ -9,9 +9,7 @@ public class Carrera implements Informacion
     private Scanner leer = new Scanner(System.in);
     //Atributos
     private String nombre;
-
     private ArrayList<Materia> colecionMaterias = new ArrayList<Materia>();
-
 
     //setter
 
@@ -71,7 +69,10 @@ public class Carrera implements Informacion
                     }
 
                     switch (opcion){
-                        case 1:System.out.println("Se elimina");break;
+                        case 1: {
+                            System.out.println("Se elimina");
+                            break;
+                        }
                         case 2:System.out.println("NO se elimina");break;
                         default:System.out.println("Ingrese una opcion valida");break;
                     }
