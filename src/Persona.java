@@ -1,3 +1,4 @@
+
 public abstract class Persona {
     //Atributos
     private String nombre;
