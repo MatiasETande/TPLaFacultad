@@ -61,6 +61,7 @@ public class Materia implements Informacion{
             {
                 colecionEstudiante.remove(estudiante);break;
             }
+
         }
 
     }
