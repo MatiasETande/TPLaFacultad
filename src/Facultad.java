@@ -74,7 +74,7 @@ public class Facultad implements Informacion{
     }
 
     public void eliminarEstudiante(String nombre){
-        
+
     }
 
 
