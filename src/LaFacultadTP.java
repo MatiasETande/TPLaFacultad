@@ -21,14 +21,18 @@ public class LaFacultadTP {
         //Creo la Facultad
 
         Facultad facultad = new Facultad("UTN FRRe");
+        Carrera c1 = new Carrera("IQ");
+        facultad.agregarCarrera(c1);
 
         int opcion = -1;
 
         do {
             System.out.println("************************ Menu ************************");
-            System.out.println("--> Agregar carrera");
-            System.out.println("--> Eliminar carrera");
-            System.out.println("--> Eliminar Estudiante");
+            System.out.println("--> 1. Agregar carrera");
+            System.out.println("--> 2. Eliminar carrera");
+            System.out.println("--> 3. Eliminar Estudiante");
+            System.out.println("--> 4. Ver carreras");
+            System.out.println("--> 0. Salir");
             System.out.println("Ingrese su Opcion: ");
 
 
@@ -38,16 +42,28 @@ public class LaFacultadTP {
                 switch (opcion){
                     case 1: {
                         System.out.println("--> Agregar carrera");
-
+                        System.out.println("Ingrese nombre de la Carrera:");
+                        Carrera carrera = new Carrera(leer.next());
+                        facultad.agregarCarrera(carrera);
                         break;
                     }
                     case 2: {
                         System.out.println("--> Eliminar carrera");
-
+                        System.out.println("Ingrese nombre de la Carrera:");
+                        String nombre = leer.next();
+                        facultad.eliminarCarrera(nombre);
                         break;
                     }
                     case 3: {
-                        System.out.println("-->Eliminar Estudiante");
+                        System.out.println("--> Eliminar Estudiante");
+                        System.out.println("Ingrese nombre Estudiante:");
+
+                        break;
+                    }
+                    case 4: {
+                        System.out.println("--> Ver carreras");
+                        System.out.println("Hay un total de "+facultad.verCantidad()+" Carreras");
+                        System.out.println(facultad.listarContenido());
 
                         break;
                     }
