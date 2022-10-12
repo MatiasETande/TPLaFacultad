@@ -1,18 +1,15 @@
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Estudiante extends Persona{
-    Scanner leer = new Scanner(System.in);
+public class Estudiante extends Persona {
+    private Scanner leer = new Scanner(System.in);
     //Atributos
 
     //Constructor
 
     public Estudiante(String nombre, String apellido, int legajo) {
         super(nombre, apellido, legajo);
-    }
-
-    public Estudiante()
-    {
     }
 
     //Setter
@@ -73,4 +70,7 @@ public class Estudiante extends Persona{
         }while (opcion != 0);
 
     }
+
+
 }
+

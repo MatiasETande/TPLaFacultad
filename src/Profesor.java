@@ -1,3 +1,4 @@
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -88,8 +89,8 @@ public class Profesor extends Persona{
                     }
                     case 4: {
                         System.out.println  ("\t-->modificando Basico" +
-                                "\n\tUtilice la ',' para los decimales" +
-                                "\n\tEjemplo: 500,46");
+                                            "\n\tUtilice la ',' para los decimales" +
+                                            "\n\tEjemplo: 500,46");
                         this.setBasico(leer.nextDouble());
                         break;
                     }
@@ -114,3 +115,4 @@ public class Profesor extends Persona{
 
     }
 }
+
